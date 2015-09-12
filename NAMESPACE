@@ -1,2 +1,12 @@
 exportPattern("^[[:alpha:]]+")
 importFrom(MASS, glm.nb, rnegbin)
+S3method(plot, hnp)
+importFrom("graphics", "legend", "matplot", "plot", "points")
+importFrom("stats", "Gamma", "anova", "aov", "as.formula", "binomial",
+           "coef", "fitted", "gaussian", "glm", "glm.control",
+           "inverse.gaussian", "lm", "model.matrix", "poisson",
+           "predict", "proj", "qnorm", "quantile", "quasibinomial",
+           "quasipoisson", "rbeta", "rbinom", "resid", "residuals",
+           "rgamma", "rmultinom", "rnbinom", "rnorm", "rpois",
+           "rstandard", "rstudent", "runif", "sd", "simulate", "terms",
+           "weights")

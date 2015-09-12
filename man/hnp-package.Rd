@@ -8,13 +8,14 @@
 \tabular{ll}{
 Package: \tab hnp\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-08-12\cr
+Version: \tab 1.1\cr
+Date: \tab 2015-09-03\cr
 License: \tab GPL version 2 or newer\cr
 }
 Package includes two functions, \code{hnp} and \code{plot.hnp}, as well as seven data sets extracted from \enc{Demétrio}{Demetrio} et al (2014).
 Explanation on how to produce the half-normal plots with simulation envelopes can be found in \enc{Demétrio}{Demetrio} and Hinde (1997) and on the \code{hnp} function documentation.
 Data sets are based on entomology studies and the focus is on overdispersed data. Details on overdispersion models can be found in Hinde and \enc{Demétrio}{Demetrio} (1998).
+Special thanks to FAPESP and CNPq for funding.
 }
 \author{
 Rafael A. Moral, John Hinde and Clarice G. B. \enc{Demétrio}{Demetrio}

@@ -270,7 +270,7 @@ if(fam=="quasibinomial") {
       if(verb.sim) cat("Simulation", i, "out of", sim, "\n")  
       res <- cbind(res,sort((1/sqrt(phi))*get.residuals(glm(cbind(y.[[i]],m.*phi-y.[[i]]) ~ X - 1, family=binomial(link=link), weights=wg/m2, control=glm.control(maxit=maxit)), type=resid.type)))}}
     } else {
-    fmla <- as.formula(paste("cbind(y.[[i]], m. - y.[[i]]) ~", paste(as.formula(paste(object$call)[2]))[3]))
+    fmla <- as.formula(paste("cbind(y.[[i]], m.*phi - y.[[i]]) ~", paste(as.formula(paste(object$call)[2]))[3]))
     if(is.data.frame(object$data)) {
       if(halfnormal) {for(i in 1:sim) {
         if(verb.sim) cat("Simulation", i, "out of", sim, "\n")
