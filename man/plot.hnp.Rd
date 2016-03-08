@@ -3,13 +3,13 @@
 \encoding{UTF-8}
 \title{Plot Method for hnp Objects}
 \description{The \code{plot} method for objects of class hnp.}
-\usage{\method{plot}{hnp}(x, cex, pch, col, lty, lwd, type,
-                          xlab, ylab, main, legpos, legcex, ...)}
+\usage{\method{plot}{hnp}(x, cex, pch, colour, lty, lwd, type,
+     xlab, ylab, main, legpos, legcex, ...)}
 \arguments{
   \item{x }{object of class \code{"hnp"}.}
   \item{cex }{character expansion size.}
   \item{pch }{character string or vector of one character or integer for plotting characters, see \code{\link{points}}.}
-  \item{col }{vector of colors.}
+  \item{colour }{vector of colours.}
   \item{lty }{vector of line types.}
   \item{lwd }{vector of line widths.}
   \item{type }{type of plot for each envelope band and points. Default is \code{c("l","l","l","p")}.}

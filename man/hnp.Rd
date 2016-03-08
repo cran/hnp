@@ -4,11 +4,11 @@
 
 \title{Half-Normal Plots with Simulation Envelopes}
 \description{Produces a (half-)normal plot from a fitted model object for a range of different models. Extendable to non-implemented model classes.}
-\usage{hnp(object, sim = 99, conf = 0.95, resid.type, maxit,
-           halfnormal = T, scale = F, plot.sim = T, verb.sim = F,
-           warn = F, how.many.out = F, print.on = F, paint.out = F,
-           col.paint.out, newclass = F, diagfun, simfun, fitfun,
-           data, ...)}
+\usage{
+hnp(object, sim = 99, conf = 0.95, resid.type, maxit,
+    halfnormal = T, scale = F, plot.sim = T, verb.sim = F,
+    warn = F, how.many.out = F, print.on = F, paint.out = F,
+    col.paint.out, newclass = F, diagfun, simfun, fitfun, ...)}
 \arguments{
   \item{object }{fitted model object.}
   \item{sim }{number of simulations. Default is 99.}
@@ -28,7 +28,6 @@
   \item{diagfun }{user-defined function used to obtain the desired diagnostic measures from the fitted model object (only needed when \code{newclass=TRUE}). Default is \code{\link{resid}}.}
   \item{simfun }{user-defined function used to simulate a random sample from the model estimated parameters (only needed when \code{newclass=TRUE}).}
   \item{fitfun }{only needed when \code{newclass=TRUE}. User-defined function used to re-fit the desired model to the simulated data.}
-  \item{data }{data set of "data.frame" class used to fit the model (only needed for when \code{newclass=TRUE}).}
   \item{\dots }{extra graphical arguments passed to \code{\link{plot.hnp}}.}
 }
 \details{
@@ -61,10 +60,10 @@ Beta-binomial:\tab package \code{VGAM} - function \code{vglm}, with \code{family
 \cr
 Zero-inflated binomial:\tab package \code{VGAM} - function \code{vglm}, with \code{family=zibinomial};\cr
 \tab package \code{gamlss} - function \code{gamlss}, with \code{family=ZIBI};\cr
-\tab package \code{glmmADMB} - function \code{glmmadmb}, with \code{family="binomial"} and \code{zeroInfl=TRUE}\cr
+\tab package \code{glmmADMB} - function \code{glmmadmb}, with \code{family="binomial"}\cr \tab and \code{zeroInfl=TRUE}\cr
 \cr
 Zero-inflated beta-binomial: \tab package \code{gamlss} - function \code{gamlss}, with \code{family=ZIBB};\cr
-\tab package \code{glmmADMB} - function \code{glmmadmb}, with \code{family="betabinomial"} and \code{zeroInfl=TRUE}\cr
+\tab package \code{glmmADMB} - function \code{glmmadmb}, with \code{family="betabinomial"}\cr \tab and \code{zeroInfl=TRUE}\cr
 \cr
 Multinomial: \tab package \code{nnet} - function \code{\link{multinom}}\cr\cr
 
@@ -74,7 +73,7 @@ Poisson: \tab function \code{\link{glm}} with \code{family=poisson}\cr
 Quasi-Poisson: \tab function \code{\link{glm}} with \code{family=quasipoisson}\cr
 \cr
 Negative binomial: \tab package \code{MASS} - function \code{\link{glm.nb}};\cr
-\tab package \code{aods3} - function \code{aodml}, with \code{family="nb"} and \code{phi.scale="inverse"}\cr
+\tab package \code{aods3} - function \code{aodml}, with \code{family="nb"}\cr \tab and \code{phi.scale="inverse"}\cr
 \cr
 Zero-inflated Poisson:\tab package \code{pscl} - function \code{zeroinfl}, with \code{dist="poisson"}\cr
 \cr
@@ -170,24 +169,14 @@ hnp(my.vec, scale=TRUE) # using N(mu, sigma^2)
 ##   userfunction(n, other_arguments) # e.g., rpois(n, fitted(obj))
 ##   }
 ##
-## when response is categorical (n>=3), "userfunction"
-## (e.g., rmultinom) must not depend on n and n must be
-## equal to 1 (unless "userfunction" works differently
-## than rmultinom in a sense that it produces less than
-## an entire simulated data set when n=1)
-##
-## fitfun <- function(data) {
+## fitfun <- function(y.) {
 ##  userfunction(y. ~ linear_predictor, other_arguments, data=data)
 ##    # e.g., glm(y. ~ block + factor1 * factor2, family=poisson,
-##    #           data=data)
+##    #           data=mydata)
 ##  }
 ##
-## the explanatory variables used in the linear predictor must
-## be present in the data.frame passed to the "data" argument
-## in hnp.
-##
 ## when response is binary:
-## fitfun <- function(data) {
+## fitfun <- function(y.) {
 ##  userfunction(cbind(y., m-y.) ~ linear_predictor,
 ##               other_arguments, data=data)
 ##    #e.g., glm(cbind(y., m-y.) ~ treatment - 1,
@@ -210,11 +199,11 @@ s.fun <- function(n, obj) {
 }
 
 # fitfun
-f.fun <- function(data) glm(y. ~ tr, family=poisson, data=data)
+my.data <- data.frame(y, tr)
+f.fun <- function(y.) glm(y. ~ tr, family=poisson, data=my.data)
 
 # hnp call
-hnp(fit1, newclass=TRUE, diagfun=d.fun, simfun=s.fun,
-    fitfun=f.fun, data=data.frame(y, tr))
+hnp(fit1, newclass=TRUE, diagfun=d.fun, simfun=s.fun, fitfun=f.fun)
 
 ## Example no. 2: Implementing gamma model using package gamlss
 # load package
@@ -237,7 +226,8 @@ s.fun <- function(n, obj) {
 }
 
 # fitfun
-f.fun <- function(data) gamlss(y. ~ tr, family=GA, data=data)
+my.data <- data.frame(y, tr)
+f.fun <- function(y.) gamlss(y. ~ tr, family=GA, data=my.data)
 
 # hnp call
 hnp(fit2, newclass=TRUE, diagfun=d.fun, simfun=s.fun,
@@ -261,12 +251,12 @@ s.fun <- function(n, obj) {
 }
 
 # fitfun
-f.fun <- function(data) gamlss(cbind(y., m-y.) ~ tr,
-                               family=BI, data=data)
+my.data <- data.frame(y, tr, m)
+f.fun <- function(y.) gamlss(cbind(y., m-y.) ~ tr,
+                               family=BI, data=my.data)
 
 # hnp call
-hnp(fit3, newclass=TRUE, diagfun=d.fun, simfun=s.fun,
-    fitfun=f.fun, data=data.frame(y, tr, m))
+hnp(fit3, newclass=TRUE, diagfun=d.fun, simfun=s.fun, fitfun=f.fun)
 }
 }
 \keyword{ hnp }

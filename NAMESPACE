@@ -1,7 +1,8 @@
-exportPattern("^[[:alpha:]]+")
 importFrom(MASS, glm.nb, rnegbin)
-S3method(plot, hnp)
+import(methods)
+
 importFrom("graphics", "legend", "matplot", "plot", "points")
+
 importFrom("stats", "Gamma", "anova", "aov", "as.formula", "binomial",
            "coef", "fitted", "gaussian", "glm", "glm.control",
            "inverse.gaussian", "lm", "model.matrix", "poisson",
@@ -10,3 +11,28 @@ importFrom("stats", "Gamma", "anova", "aov", "as.formula", "binomial",
            "rgamma", "rmultinom", "rnbinom", "rnorm", "rpois",
            "rstandard", "rstudent", "runif", "sd", "simulate", "terms",
            "weights")
+
+export(hnp, plot.hnp, .makehnp, newhnp)
+
+S3method(plot, hnp)
+
+S3method(hnp, default)
+S3method(hnp, aodml)
+S3method(hnp, aov)
+S3method(hnp, aovlist)
+S3method(hnp, default)
+S3method(hnp, gamlss)
+S3method(hnp, glm)
+S3method(hnp, glmerMod)
+S3method(hnp, glmmadmb)
+S3method(hnp, hurdle)
+S3method(hnp, integer)
+S3method(hnp, lm)
+S3method(hnp, lmerMod)
+S3method(hnp, multinom)
+S3method(hnp, negbin)
+S3method(hnp, numeric)
+S3method(hnp, vglm)
+S3method(hnp, zeroinfl)
+
+

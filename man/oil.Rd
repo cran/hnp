@@ -14,7 +14,7 @@ Effects of three agricultural oils on \emph{Diaphorina citri} oviposition.
   A data frame with 70 observations on the following 2 variables.
 \tabular{lll}{
 \code{y}\tab numeric \tab number of eggs laid\cr
-\code{treat}\tab  factor \tab levels \code{Control}, \code{Oppa0.5}, \code{Oppa1.0}, \code{Iharol0.5}, \code{Iharol1.0}, \code{Nortox0.5} and \code{Nortox1.0}
+\code{treat}\tab  factor \tab treatments applied in the experiment
   }}
 
 \details{
