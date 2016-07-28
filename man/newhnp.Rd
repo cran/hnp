@@ -9,8 +9,8 @@ newhnp(object, sim=99, conf=.95, halfnormal=T, plot.sim=T,
        col.paint.out, diagfun, simfun, fitfun, ...)
 }
 \arguments{
-  \item{object }{fitted model object.}
-  \item{sim }{number of simulations. Default is 99.}
+  \item{object }{fitted model object or numeric vector.}
+  \item{sim }{number of simulations used to compute envelope. Default is 99.}
   \item{conf }{confidence level of the simulated envelope. Default is 0.95.}
   \item{halfnormal }{logical. If \code{TRUE}, a half-normal plot is produced. If \code{FALSE}, a normal plot is produced. Default is \code{TRUE}.}
   \item{plot.sim }{logical. Should the (half-)normal plot be plotted? Default is \code{TRUE}.}
@@ -19,9 +19,9 @@ newhnp(object, sim=99, conf=.95, halfnormal=T, plot.sim=T,
   \item{print.on }{logical. If \code{TRUE}, the number of points out of the envelope is printed on the plot. Default is \code{FALSE}.}
   \item{paint.out }{logical. If \code{TRUE}, points out of the simulation envelope are plotted in a different color. Default is \code{FALSE}.}
   \item{col.paint.out }{If \code{paint.out=TRUE}, sets the color of points out of the envelope. Default is \code{"red"}.}
-  \item{diagfun }{user-defined function used to obtain the desired diagnostic measures from the fitted model object (only needed when \code{newclass=TRUE}). Default is \code{\link{resid}}.}
-  \item{simfun }{user-defined function used to simulate a random sample from the model estimated parameters (only needed when \code{newclass=TRUE}).}
-  \item{fitfun }{only needed when \code{newclass=TRUE}. User-defined function used to re-fit the desired model to the simulated data.}
+  \item{diagfun }{user-defined function used to obtain the diagnostic measures from the fitted model object (only used when \code{newclass=TRUE}). Default is \code{\link{resid}}.}
+  \item{simfun }{user-defined function used to simulate a random sample from the model estimated parameters (only used when \code{newclass=TRUE}).}
+  \item{fitfun }{user-defined function used to re-fit the model to simulated data (only used when \code{newclass=TRUE}).}
   \item{\dots }{extra graphical arguments passed to \code{\link{plot.hnp}}.}
 }
 \details{

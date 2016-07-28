@@ -10,24 +10,24 @@ hnp(object, sim = 99, conf = 0.95, resid.type, maxit,
     warn = F, how.many.out = F, print.on = F, paint.out = F,
     col.paint.out, newclass = F, diagfun, simfun, fitfun, ...)}
 \arguments{
-  \item{object }{fitted model object.}
-  \item{sim }{number of simulations. Default is 99.}
+  \item{object }{fitted model object or numeric vector.}
+  \item{sim }{number of simulations used to compute envelope. Default is 99.}
   \item{conf }{confidence level of the simulated envelope. Default is 0.95.}
-  \item{resid.type }{type of residuals to be used ("deviance", "pearson", "response", "working", "simple"). Types "student" or "standard" may be used for \code{\link{aov}}, \code{\link{lm}}, \code{\link{glm}}, and \code{\link{glm.nb}} objects for studentized and standardized residuals, respectively. Defaults are "student" for \code{\link{aov}} and \code{\link{lm}} objects, "deviance" for \code{\link{glm}}, \code{\link{glm.nb}}, \code{lmer}, \code{glmer} and \code{aodml} objects, "simple" for \code{gamlss} objects, "response" for \code{glmmadmb} and \code{vglm} objects, "pearson" for \code{zeroinfl} and \code{hurdle} objects.}
+  \item{resid.type }{type of residuals to be used; must be one of "deviance", "pearson", "response", "working", "simple", "student", or "standard". Not all model type and residual type combinations are allowed. Defaults are "student" for \code{\link{aov}} and \code{\link{lm}} objects, "deviance" for \code{\link{glm}}, \code{\link{glm.nb}}, \code{lmer}, \code{glmer} and \code{aodml} objects, "simple" for \code{gamlss} objects, "response" for \code{glmmadmb} and \code{vglm} objects, "pearson" for \code{zeroinfl} and \code{hurdle} objects.}
   \item{maxit }{maximum number of iterations of the estimation algorithm. Defaults are 25 for \code{\link{glm}}, \code{\link{glm.nb}}, \code{gamlss} and \code{vglm} objects, 300 for \code{glmmadmb}, \code{lmer} and \code{glmer} objects, 3000 for \code{aodml} objects, 10000 for \code{zeroinfl} and \code{hurdle} objects.}
   \item{halfnormal }{logical. If \code{TRUE}, a half-normal plot is produced. If \code{FALSE}, a normal plot is produced. Default is \code{TRUE}.}
-  \item{scale }{logical. If \code{TRUE}, when using a numeric vector as \code{object}, uses a non-standard normal to simulate from, estimating mean and variance from the numeric vector. If \code{FALSE}, uses a standard normal distribution to simulate from. Default is \code{FALSE}.}
+  \item{scale }{logical. If \code{TRUE} and if \code{object} is a numeric vector, simulates from a normal distribution with mean and variance estimated from \code{object}. If \code{FALSE}, uses a standard normal distribution to simulate from. Default is \code{FALSE}.}
   \item{plot.sim }{logical. Should the (half-)normal plot be plotted? Default is \code{TRUE}.}
   \item{verb.sim }{logical. If \code{TRUE}, prints each step of the simulation procedure. Default is \code{FALSE}.}
-  \item{warn }{logical. If \code{TRUE}, shows possible warning messages hidden in the simulation process. Default is \code{FALSE}.}
+  \item{warn }{logical. If \code{TRUE}, shows warning messages in the simulation process. Default is \code{FALSE}.}
   \item{how.many.out }{logical. If \code{TRUE}, the number of points out of the envelope is printed. Default is \code{FALSE}.}
   \item{print.on }{logical. If \code{TRUE}, the number of points out of the envelope is printed on the plot. Default is \code{FALSE}.}
   \item{paint.out }{logical. If \code{TRUE}, points out of the simulation envelope are plotted in a different color. Default is \code{FALSE}.}
   \item{col.paint.out }{If \code{paint.out=TRUE}, sets the color of points out of the envelope. Default is \code{"red"}.}
-  \item{newclass }{logical. Must be \code{TRUE} so that user-defined functions may be provided to do the half-normal plot with a simulation envelope for a model class or a diagnostic measure which is not currently implemented in \code{hnp}. Default is \code{FALSE}.}
-  \item{diagfun }{user-defined function used to obtain the desired diagnostic measures from the fitted model object (only needed when \code{newclass=TRUE}). Default is \code{\link{resid}}.}
-  \item{simfun }{user-defined function used to simulate a random sample from the model estimated parameters (only needed when \code{newclass=TRUE}).}
-  \item{fitfun }{only needed when \code{newclass=TRUE}. User-defined function used to re-fit the desired model to the simulated data.}
+  \item{newclass }{logical. If \code{TRUE}, use \code{diagfun}, \code{simfun}, and \code{fitfun} to extract diagnostics (typically residuals), generate simulated data using fitted model parameters, and fit the desired model. Default is \code{FALSE}.}
+  \item{diagfun }{user-defined function used to obtain the diagnostic measures from the fitted model object (only used when \code{newclass=TRUE}). Default is \code{\link{resid}}.}
+  \item{simfun }{user-defined function used to simulate a random sample from the model estimated parameters (only used when \code{newclass=TRUE}).}
+  \item{fitfun }{user-defined function used to re-fit the model to simulated data (only used when \code{newclass=TRUE}).}
   \item{\dots }{extra graphical arguments passed to \code{\link{plot.hnp}}.}
 }
 \details{

@@ -15,7 +15,7 @@
     \item{\code{embryos}}{a numeric vector}
   }
 }
-\details{To study the effect of six sugars (maltose, glucose, galactose, lactose, sucrose and glycerol) on the stimulation of somatic embryos from callus cultures, the number of embryos after approximately four weeks was observed. The experiment was set up in a completely randomized block design with five blocks and the six sugars at dose levels of 18, 37, 75, 110 and 150 \deqn{\mu}M for the first five and 6, 12, 24, 36 and 50 \deqn{\mu}M for glycerol, see Tomaz (2001). The main interest was in the dose-response relationship.}
+\details{To study the effect of six sugars (maltose, glucose, galactose, lactose, sucrose and glycerol) on the stimulation of somatic embryos from callus cultures, the number of embryos after approximately four weeks was observed. The experiment was set up in a completely randomized block design with five blocks and the six sugars at dose levels of 18, 37, 75, 110 and 150 mM for the first five and 6, 12, 24, 36 and 50 mM for glycerol, see Tomaz (2001). The main interest was in the dose-response relationship.}
 \source{
 Tomaz ML, Mendes BMJ, Filho FAM, Demetrio CGB, Jansakul N, Rodriguez APM (1997). Somatic embryogenesis in \emph{Citrus} spp.: Carbohydrate stimulation and histodifferentiation. In Vitro Cellular & Developmental Biology - Plant, 37, 446–452.
 }

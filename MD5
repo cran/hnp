@@ -1,4 +1,4 @@
-fae680768fe0f335e00bc8af5eed2f83 *DESCRIPTION
+c96e33633b7be6a12a8d0d0c2c69ac3a *DESCRIPTION
 2f9a8c803ccf0e5ed25d859ea403c92b *NAMESPACE
 6b3e3044fca0884956d524a144fa6e45 *R/hnp-internal.R
 47d90e395d7beaf1cd52e059a18c16a5 *R/hnp.R
@@ -18,10 +18,10 @@ f71f269b7825cebcf2a7bbd17d8a5565 *man/cbb.Rd
 58fa90966b303a45fe7d55656eabf06a *man/fungi.Rd
 257384b12fd2a5244f51a7723b510073 *man/hnp-internal.Rd
 62ded727c5011387a610fb55ec0f4ce8 *man/hnp-package.Rd
-20e25fb1916ac2bb154a2ef7136ac4df *man/hnp.Rd
-1377023513148971cbf8f9c337d09028 *man/newhnp.Rd
+d544adf0e3caad3aadb35e4904d8e708 *man/hnp.Rd
+b8a83e0a10ba06a8517420d19c3cce5c *man/newhnp.Rd
 26e0d335e05969467cb4be9dc5778861 *man/oil.Rd
-b8c9177516f171f908f29afbe3e0a568 *man/orange.Rd
+d9fef74f3ba028091472d3e8fc5c37ab *man/orange.Rd
 6a94fc531e71254f315816e1fd065984 *man/plot.hnp.Rd
 23f2d8d632988bb86dea9d91993509a6 *man/progeny.Rd
 dc9b707ef6d31f72b3cdf87159d8924c *man/wolbachia.Rd
