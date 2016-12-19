@@ -1122,10 +1122,10 @@ hnp.vglm <-
       fmla <- as.formula(paste("cbind(y.[[i]],m.-y.[[i]]) ~ ", paste(object@terms$terms)[3]))
       if(halfnormal) {for(i in 1:sim) {
         if(verb.sim) cat("Simulation", i, "out of", sim, "\n")
-        res <- cbind(res, sort(abs(resid(VGAM::vglm(formula=fmla, family=VGAM::betabinomial(zero=zero), control=VGAM::vglm.control(maxit=maxit), data=data, subset=eval(eval(object)@call$subset)), type=resid.type))))}
+        res <- cbind(res, sort(abs(VGAM::resid(VGAM::vglm(formula=fmla, family=VGAM::betabinomial(zero=zero), control=VGAM::vglm.control(maxit=maxit), data=data, subset=eval(eval(object)@call$subset)), type=resid.type))))}
       } else {for(i in 1:sim) {
         if(verb.sim) cat("Simulation", i, "out of", sim, "\n")  
-        res <- cbind(res, sort(resid(VGAM::vglm(formula=fmla, family=VGAM::betabinomial(zero=zero), control=VGAM::vglm.control(maxit=maxit), data=data, subset=eval(eval(object)@call$subset)), type=resid.type)))}}
+        res <- cbind(res, sort(VGAM::resid(VGAM::vglm(formula=fmla, family=VGAM::betabinomial(zero=zero), control=VGAM::vglm.control(maxit=maxit), data=data, subset=eval(eval(object)@call$subset)), type=resid.type)))}}
     }  
     ## zero-inflated binomial
     if(fam=="ZIB") {
@@ -1138,10 +1138,10 @@ hnp.vglm <-
       fmla <- as.formula(paste("cbind(y.[[i]],m.-y.[[i]]) ~ ", paste(object@terms$terms)[3]))
       if(halfnormal) {for(i in 1:sim) {
         if(verb.sim) cat("Simulation", i, "out of", sim, "\n") 
-        res <- cbind(res, sort(abs(resid(VGAM::vglm(formula=fmla, family=VGAM::zibinomial(zero=zero), control=VGAM::vglm.control(maxit=maxit), data=data, subset=eval(eval(object)@call$subset)), type=resid.type))))}
+        res <- cbind(res, sort(abs(VGAM::resid(VGAM::vglm(formula=fmla, family=VGAM::zibinomial(zero=zero), control=VGAM::vglm.control(maxit=maxit), data=data, subset=eval(eval(object)@call$subset)), type=resid.type))))}
       } else {for(i in 1:sim) {
         if(verb.sim) cat("Simulation", i, "out of", sim, "\n")  
-        res <- cbind(res, sort(resid(VGAM::vglm(formula=fmla, family=VGAM::zibinomial(zero=zero), control=VGAM::vglm.control(maxit=maxit), data=data, subset=eval(eval(object)@call$subset)), type=resid.type)))}}
+        res <- cbind(res, sort(VGAM::resid(VGAM::vglm(formula=fmla, family=VGAM::zibinomial(zero=zero), control=VGAM::vglm.control(maxit=maxit), data=data, subset=eval(eval(object)@call$subset)), type=resid.type)))}}
     }  
     
     # now run .makehnp
