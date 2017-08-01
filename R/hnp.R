@@ -421,9 +421,13 @@ hnp.glm <-
       cat("Quasi-Poisson model", '\n')
       X <- model.matrix(object)
       phi <- summary(object)$dispersion
-      rqpois <- function(n, mu, theta) rnbinom(n = n, mu = mu, size = mu/(theta-1))
-      if(summary(object)$dispersion < 1) {stop("Data is underdispersed. Consider fitting another type of model.")}
-      y. <- lapply(rep(length(object$fit), sim), rqpois, object$fit, summary(object)$dispersion)
+      if(phi > 1) {
+        rqpois <- function(n, mu, theta) rnbinom(n = n, mu = mu, size = mu/(theta-1))
+        y. <- lapply(rep(length(object$fit), sim), rqpois, object$fit, phi)
+      } else {
+        y. <- lapply(rep(length(object$fit), sim), rpois, object$fit)
+        y. <- lapply(y., function(x) x*phi)
+      }
       if(halfnormal) {res <- sort(abs((1/sqrt(phi))*get.residuals(object, type=resid.type)))
       } else {res <- sort((1/sqrt(phi))*get.residuals(object, type=resid.type))}  
       if(is.null(object$offset)) {
