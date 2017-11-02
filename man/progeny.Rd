@@ -29,6 +29,8 @@ the focus is on the numbers of emerged insects (progeny) after 60 days, see Ribe
 }
 \references{
 Ribeiro, L. P., Vendramin, J. D., Bicalho, K. U., Andrade, M. S., Fernandes, J. B., Moral, R. A., \enc{Demétrio}{Demetrio}, C. G. B. (2013) Annona mucosa Jacq. (Annonaceae): A promising source of bioactive compounds against Sitophilus zeamais Mots. (Coleoptera: Curculionidae). J Stored Prod Res 55:6-14
+
+Moral, R. A., Hinde, J. and \enc{Demétrio}{Demetrio}, C. G. B. (2017) Half-normal plots and overdispersed models in R: the hnp package. Journal of Statistical Software 81(10):1-23.
 }
 \examples{
 data(progeny)

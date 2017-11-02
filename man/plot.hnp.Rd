@@ -23,6 +23,8 @@
 % \details{}
 \value{None.}
 \references{
+Moral, R. A., Hinde, J. and \enc{Demétrio}{Demetrio}, C. G. B. (2017) Half-normal plots and overdispersed models in R: the hnp package. Journal of Statistical Software 81(10):1-23.
+
 \enc{Demétrio}{Demetrio}, C. G. B. and Hinde, J. (1997) Half-normal plots and overdispersion. GLIM Newsletter 27:19-26.
 
 Hinde, J. and \enc{Demétrio}{Demetrio}, C. G. B. (1998) Overdispersion: models and estimation. Computational Statistics and Data Analysis 27:151-170.

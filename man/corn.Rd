@@ -29,6 +29,8 @@ and, after 60 days, the numbers of damaged and undamaged corn grains were counte
 \enc{Demétrio}{Demetrio}, C. G. B., Hinde, J. and Moral, R. A. (2014) Models for overdispersed data in entomology. In Godoy, W. A. C. and Ferreira, C. P. (Eds.) Ecological modelling applied to entomology. Springer.
 }
 \references{
+Moral, R. A., Hinde, J. and \enc{Demétrio}{Demetrio}, C. G. B. (2017) Half-normal plots and overdispersed models in R: the hnp package. Journal of Statistical Software 81(10):1-23.
+
 Ribeiro, L. P., Vendramin, J. D., Bicalho, K. U., Andrade, M. S., Fernandes, J. B., Moral, R. A., \enc{Demétrio}{Demetrio}, C. G. B. (2013) \emph{Annona mucosa Jacq.} (\emph{Annonaceae}): A promising source of bioactive compounds against \emph{Sitophilus zeamais Mots.} (\emph{Coleoptera: Curculionidae}). J Stored Prod Res 55:6-14
 }
 \examples{

@@ -1,0 +1,21 @@
+bibentry(bibtype = "Article",
+  title        = "Half-Normal Plots and Overdispersed Models in {R}: The {hnp} Package",
+  author       = c(person(given = c("Rafael", "A"),
+                          family = "Moral",
+                          email = "rafael.moral@usp.br"),
+                   person(given = "John",
+                          family = "Hinde",
+                          email = "john.hinde@nuigalway.ie"),
+                   person(given = c("Clarice", "G", "B"),
+                          family = "Dem\\'etrio",
+                          email = "clarice.demetrio@usp.br")),
+  journal      = "Journal of Statistical Software",
+  year         = "2017",
+  volume       = "81",
+  number       = "10",
+  pages        = "1--23",
+  doi          = "10.18637/jss.v081.i10",
+
+  header       = "To cite hnp in publications use:"
+)
+

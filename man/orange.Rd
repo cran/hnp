@@ -20,6 +20,10 @@
 Tomaz ML, Mendes BMJ, Filho FAM, Demetrio CGB, Jansakul N, Rodriguez APM (1997). Somatic embryogenesis in \emph{Citrus} spp.: Carbohydrate stimulation and histodifferentiation. In Vitro Cellular & Developmental Biology - Plant, 37, 446–452.
 }
 
+\references{
+Moral, R. A., Hinde, J. and \enc{Demétrio}{Demetrio}, C. G. B. (2017) Half-normal plots and overdispersed models in R: the hnp package. Journal of Statistical Software 81(10):1-23.
+}
+
 \examples{
 data(orange)
 
