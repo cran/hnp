@@ -1,6 +1,6 @@
-bc2f30a6e264f4d40a13b01d55acc40a *DESCRIPTION
+c655f1831273465e0e9862641c43d33e *DESCRIPTION
 2f9a8c803ccf0e5ed25d859ea403c92b *NAMESPACE
-6b3e3044fca0884956d524a144fa6e45 *R/hnp-internal.R
+8dd74d074260562edef3382cf74353dd *R/hnp-internal.R
 6ba0fda72e583078fcd8f32621838b62 *R/hnp.R
 cbf40726c6c1724224460a274e9fa8a4 *R/newhnp.R
 93a55bd39fe759ceb0254261c4680b95 *R/plot.hnp.R
@@ -19,7 +19,7 @@ f71f269b7825cebcf2a7bbd17d8a5565 *man/cbb.Rd
 58fa90966b303a45fe7d55656eabf06a *man/fungi.Rd
 257384b12fd2a5244f51a7723b510073 *man/hnp-internal.Rd
 65afe65fdd5b7700425d64f5cab817d0 *man/hnp-package.Rd
-eda3cfa1721a9f58f0a2ee03e8e3e33f *man/hnp.Rd
+93698ad92053681217f9a469d7d6ee10 *man/hnp.Rd
 b8a83e0a10ba06a8517420d19c3cce5c *man/newhnp.Rd
 26e0d335e05969467cb4be9dc5778861 *man/oil.Rd
 952914706f04a83bc35e265d177c7599 *man/orange.Rd

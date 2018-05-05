@@ -112,6 +112,7 @@ Implementing a new model class is done by providing three functions to \code{hnp
 \item{out }{number of points out of the envelope}
 \item{print.on }{logical. Equals \code{TRUE} if \code{print.on=TRUE} in the \code{hnp} call}
 \item{paint.out }{logical. Equals \code{TRUE} if \code{paint.out=TRUE} in the \code{hnp} call}
+\item{all.sim }{matrix with all diagnostics obtained in the simulations. Each column represents one simulation}
 }
 \references{
 Moral, R. A., Hinde, J. and \enc{Demétrio}{Demetrio}, C. G. B. (2017) Half-normal plots and overdispersed models in R: the hnp package. Journal of Statistical Software 81(10):1-23.

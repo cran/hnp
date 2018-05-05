@@ -32,6 +32,7 @@ function(obj, conf, halfnormal, how.many.out, paint.out, col.paint.out, print.on
   } else {
     simdata$how.many.out <- FALSE
   }
+  simdata$all.sim <- res
   if(plot.sim) {
     plot(simdata, ...)
     return(invisible(simdata))
