@@ -8,8 +8,8 @@
 \tabular{ll}{
 Package: \tab hnp\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2015-09-03\cr
+Version: \tab 1.2-6\cr
+Date: \tab 2018-05-21\cr
 License: \tab GPL version 2 or newer\cr
 }
 Package includes two functions, \code{hnp} and \code{plot.hnp}, as well as seven data sets extracted from \enc{Demétrio}{Demetrio} et al (2014).
