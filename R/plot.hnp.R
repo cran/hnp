@@ -1,6 +1,6 @@
 plot.hnp <-
 function(x, cex, pch, colour, lty, lwd, type, xlab, ylab, main, legpos, legcex, ...) {
-    if(class(x)!="hnp") stop("Object must be of class 'hnp'")
+    if(!inherits(x, "hnp")) stop("Object must be of class 'hnp'")
     if(missing(xlab)) xlab <- "Theoretical quantiles"
     if(missing(ylab)) ylab <- "Residuals"
     if(missing(main)) main <- ""

@@ -13,8 +13,8 @@ hnp(object, sim = 99, conf = 0.95, resid.type, maxit,
   \item{object }{fitted model object or numeric vector.}
   \item{sim }{number of simulations used to compute envelope. Default is 99.}
   \item{conf }{confidence level of the simulated envelope. Default is 0.95.}
-  \item{resid.type }{type of residuals to be used; must be one of "deviance", "pearson", "response", "working", "simple", "student", or "standard". Not all model type and residual type combinations are allowed. Defaults are "student" for \code{\link{aov}} and \code{\link{lm}} objects, "deviance" for \code{\link{glm}}, \code{\link{glm.nb}}, \code{lmer}, \code{glmer} and \code{aodml} objects, "simple" for \code{gamlss} objects, "response" for \code{glmmadmb} and \code{vglm} objects, "pearson" for \code{zeroinfl} and \code{hurdle} objects.}
-  \item{maxit }{maximum number of iterations of the estimation algorithm. Defaults are 25 for \code{\link{glm}}, \code{\link{glm.nb}}, \code{gamlss} and \code{vglm} objects, 300 for \code{glmmadmb}, \code{lmer} and \code{glmer} objects, 3000 for \code{aodml} objects, 10000 for \code{zeroinfl} and \code{hurdle} objects.}
+  \item{resid.type }{type of residuals to be used; must be one of "deviance", "pearson", "response", "working", "simple", "student", or "standard". Not all model type and residual type combinations are allowed. Defaults are "student" for \code{\link{aov}} and \code{\link{lm}} objects, "deviance" for \code{\link{glm}}, \code{\link[MASS]{glm.nb}}, \code{lmer}, \code{glmer} and \code{aodml} objects, "simple" for \code{gamlss} objects, "response" for \code{glmmadmb} and \code{vglm} objects, "pearson" for \code{zeroinfl} and \code{hurdle} objects.}
+  \item{maxit }{maximum number of iterations of the estimation algorithm. Defaults are 25 for \code{\link{glm}}, \code{\link[MASS]{glm.nb}}, \code{gamlss} and \code{vglm} objects, 300 for \code{glmmadmb}, \code{lmer} and \code{glmer} objects, 3000 for \code{aodml} objects, 10000 for \code{zeroinfl} and \code{hurdle} objects.}
   \item{halfnormal }{logical. If \code{TRUE}, a half-normal plot is produced. If \code{FALSE}, a normal plot is produced. Default is \code{TRUE}.}
   \item{scale }{logical. If \code{TRUE} and if \code{object} is a numeric vector, simulates from a normal distribution with mean and variance estimated from \code{object}. If \code{FALSE}, uses a standard normal distribution to simulate from. Default is \code{FALSE}.}
   \item{plot.sim }{logical. Should the (half-)normal plot be plotted? Default is \code{TRUE}.}
@@ -65,14 +65,14 @@ Zero-inflated binomial:\tab package \code{VGAM} - function \code{vglm}, with \co
 Zero-inflated beta-binomial: \tab package \code{gamlss} - function \code{gamlss}, with \code{family=ZIBB};\cr
 \tab package \code{glmmADMB} - function \code{glmmadmb}, with \code{family="betabinomial"}\cr \tab and \code{zeroInfl=TRUE}\cr
 \cr
-Multinomial: \tab package \code{nnet} - function \code{\link{multinom}}\cr\cr
+Multinomial: \tab package \code{nnet} - function \code{\link[nnet]{multinom}}\cr\cr
 
 \strong{Count data}:\cr\cr
 Poisson: \tab function \code{\link{glm}} with \code{family=poisson}\cr
 \cr
 Quasi-Poisson: \tab function \code{\link{glm}} with \code{family=quasipoisson}\cr
 \cr
-Negative binomial: \tab package \code{MASS} - function \code{\link{glm.nb}};\cr
+Negative binomial: \tab package \code{MASS} - function \code{\link[MASS]{glm.nb}};\cr
 \tab package \code{aods3} - function \code{aodml}, with \code{family="nb"}\cr \tab and \code{phi.scale="inverse"}\cr
 \cr
 Zero-inflated Poisson:\tab package \code{pscl} - function \code{zeroinfl}, with \code{dist="poisson"}\cr
